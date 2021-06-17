@@ -139,7 +139,7 @@ botonTan = Button(frameCalculadora, text="Tan", width=6)
 botonTan.grid(row=7, column=4, padx=5, pady=5)
 
 
-# ---------------------Loop principal-------------------------
+# ---------------------Loop principal------------------------
 
 iniciar()
 raiz.mainloop()
