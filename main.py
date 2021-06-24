@@ -29,6 +29,7 @@ def cambiarModo(mod):
         botonIgu["state"] = "disable"
     else:
         modo = False
+        frameGrafico.delete("all")
         botonX["state"] = "disable"
         botonIgu["state"] = "normal"
 # ---------------------------Agregar números a la pantalla--------
@@ -45,7 +46,6 @@ def agregarElemento(elemento):
 
 def evaluar(x="operacion"):
     global operacion
-    print(operacion)
     resultado = operacion
     if x != "operacion":
         resultado = operacion.replace("x", "("+str(x)+")")
@@ -62,8 +62,8 @@ def evaluar(x="operacion"):
 def igual():
     global operacion
     global numeroPantalla
-    r=evaluar()
-    if r== 9999999999999999999999999999999999999999999999:
+    r = evaluar()
+    if r == 9999999999999999999999999999999999999999999999:
         numeroPantalla.set("Error matemático")
     else:
         numeroPantalla.set(evaluar())
@@ -159,7 +159,7 @@ boton6 = Button(frameCalculadora, text="6", width=6,
                 command=lambda: agregarElemento(6))
 boton6.grid(row=4, column=3, padx=5, pady=5)
 botonRest = Button(frameCalculadora, text="-", width=6,
-                   command=lambda: agregarElemento(" - "))
+                   command=lambda: agregarElemento("- "))
 botonRest.grid(row=4, column=4, padx=5, pady=5)
 
 # -------------------------Cuarta fila de botones--------------
@@ -173,7 +173,7 @@ boton3 = Button(frameCalculadora, text="3", width=6,
                 command=lambda: agregarElemento(3))
 boton3.grid(row=5, column=3, padx=5, pady=5)
 botonSum = Button(frameCalculadora, text="+", width=6,
-                  command=lambda: agregarElemento(" + "))
+                  command=lambda: agregarElemento("+ "))
 botonSum.grid(row=5, column=4, padx=5, pady=5)
 
 # -------------------------Quinta fila de botones--------------
