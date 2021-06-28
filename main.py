@@ -4,7 +4,7 @@ from tkinter import *
 from math import *
 
 raiz = tk.Tk()
-raiz.title("Calculadora")
+raiz.title("Calculadora A&B 2021")
 raiz.resizable(height=False, width=False)
 
 operacion = ""
@@ -25,6 +25,7 @@ def cambiarModo(mod):
     global modo
     if mod == 1:
         planoCar()
+        reset()
         modo = True
         botonX["state"] = "normal"
         botonFX["state"] = "normal"
@@ -32,6 +33,8 @@ def cambiarModo(mod):
     else:
         modo = False
         frameGrafico.delete("all")
+        planoCar()
+        reset()
         botonX["state"] = "disable"
         botonFX["state"] = "disable"
         botonIgu["state"] = "normal"
