@@ -24,13 +24,16 @@ def iniciar():
 def cambiarModo(mod):
     global modo
     if mod == 1:
+        planoCar()
         modo = True
         botonX["state"] = "normal"
+        botonFX["state"] = "normal"
         botonIgu["state"] = "disable"
     else:
         modo = False
         frameGrafico.delete("all")
         botonX["state"] = "disable"
+        botonFX["state"] = "disable"
         botonIgu["state"] = "normal"
 # ---------------------------Agregar números a la pantalla--------
 
@@ -78,6 +81,8 @@ def reset():
     numeroPantalla.set("")
 
 
+
+
 # ------------------------Configuracion inicial de frames -------
 frameGrafico = tk.Canvas(raiz, width=300, height=300, bg="Gray")
 frameGrafico.grid(row=0, column=1)
@@ -103,8 +108,6 @@ def convertirPunto(x, y):
 def graficar():
     global modo
     if modo:
-        frameGrafico.create_line(150, 0, 150, 300)
-        frameGrafico.create_line(0, 150, 300, 150)
         puntosX = []
         puntosY = []
 
@@ -119,6 +122,31 @@ def graficar():
             frameGrafico.create_line(
                 punto1[0], punto1[1], punto2[0], punto2[1])
 
+#----------------------------Plano Cartesiano-------------------
+
+def planoCar ():
+    frameGrafico.create_line(150, 0, 150, 300)
+    frameGrafico.create_line(0, 150, 300, 150)
+    #positivasY
+    frameGrafico.create_line(140,120,160,120)
+    frameGrafico.create_line(140,90,160,90)
+    frameGrafico.create_line(140,60,160,60)
+    frameGrafico.create_line(140,30,160,30)
+    #negativasY
+    frameGrafico.create_line(140,180,160,180)
+    frameGrafico.create_line(140,210,160,210)
+    frameGrafico.create_line(140,240,160,240)
+    frameGrafico.create_line(140,270,160,270)
+    #positivasX
+    frameGrafico.create_line(180,140,180,160)
+    frameGrafico.create_line(210,140,210,160)
+    frameGrafico.create_line(240,140,240,160)
+    frameGrafico.create_line(270,140,270,160)
+    #negativasX
+    frameGrafico.create_line(120,140,120,160)
+    frameGrafico.create_line(90,140,90,160)
+    frameGrafico.create_line(60,140,60,160)
+    frameGrafico.create_line(30,140,30,160)
 
 # ----------------------------Primera fila de botones-----------
 botonX = Button(frameCalculadora, text=" x", width=6,
