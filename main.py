@@ -4,7 +4,7 @@ from tkinter import *
 from math import *
 
 raiz = tk.Tk()
-raiz.title("Calculadora A&B 2021")
+raiz.title("Calculadora 2021")
 raiz.resizable(height=False, width=False)
 
 operacion = ""
